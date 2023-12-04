@@ -51,14 +51,14 @@ h3{
     display: block;
 }
 
-.fa-arrow-left{
-    top: 50%;
-    left: 40px;
-}
-
 .fa-arrow-right{
     top: 50%;
-    right: 0;
+    right: 2%;
+}
+
+.fa-arrow-left{
+    top: 50%;
+    left: 2%;
 }
 
 .fa-solid{
@@ -69,7 +69,6 @@ h3{
     background-color: lightgrey;
     border-radius: 50%;
     opacity: 0.5;
-    transform: translate(-50%);
     font-size: 30px;
     padding: 5px;
     color: black;

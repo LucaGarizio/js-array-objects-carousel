@@ -52,12 +52,14 @@ console.log(box);
 
 
 const carouselContainer = document.getElementById("carousel-container");
+    
+box.forEach((immagine, puntatoreIndice) => {
 
-box.forEach((immagine, puntatoreIndice) =>{
     // creare costante per creare div contenitore
     const boxContainer = document.createElement("div")
     boxContainer.classList.add("img-container");
-    // se l'inidice è uguale a 0 aggiungi classe css
+
+    // se l'indice è uguale a 0 aggiungi classe css
     if (puntatoreIndice === 0) {
         boxContainer.classList.add("active");
     }
@@ -76,10 +78,16 @@ box.forEach((immagine, puntatoreIndice) =>{
     nextButton.id = ("next");
     nextButton.innerHTML = '<i class="fa-solid fa-arrow-right"></i>';
 
+    // aggiungere la funzione per cambiare immagine al click
+    nextButton.addEventListener('click', () => updateImg ("next"));
+
     const prevButton = document.createElement ("div")
     prevButton.id = ("prev");
     prevButton.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
 
+    // aggiungere la funzione per cambiare immagine al click
+    prevButton.addEventListener('click', () => updateImg ("prev"));
+    
     // appendere i vari elementi
     boxContainer.append(img);
 
@@ -91,7 +99,37 @@ box.forEach((immagine, puntatoreIndice) =>{
 
     boxContainer.append(prevButton);
 
-    // appendi tutto al container principale
+    // appendere tutto al container principale
     carouselContainer.append(boxContainer);
     }
 );
+
+
+// Inizializza l'indice corrente a 0
+let currentIndex = 0;
+
+// aggiornare il carosello in base alla direzione
+function updateImg (direction) {
+    // Ottienere tutti gli elementi con la classe 'img-container'
+    const imgContainers = document.querySelectorAll(".img-container");
+
+    // Aggiorna l'indice in base alla direzione
+    if (direction === 'next') {
+        currentIndex = (currentIndex + 1) % box.length;
+    } else {
+        currentIndex = (currentIndex - 1 + box.length) % box.length;
+    }
+
+    // cerca tutti gli elementi con la classe 'img-container'
+    imgContainers.forEach((container, index) => {
+        // Rimuovi la classe 'active' da tutti gli elementi
+        container.classList.remove("active");
+        // Aggiungere la classe 'active' solo all'elemento corrente
+        if (index === currentIndex) {
+            container.classList.add("active");
+        }
+    });
+};
+
+
+
