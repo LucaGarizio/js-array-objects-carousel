@@ -88,7 +88,20 @@ box.forEach((immagine, puntatoreIndice) => {
 
     // aggiungere la funzione per cambiare immagine al click
     prevButton.addEventListener('click', () => updateImg ("prev"));
+
+    // creare const per start per inizializzare carosello automatico
+    const startButton = document.createElement("button");
+    startButton.classList.add("start")
+    startButton.innerHTML = "start";
+    startButton.addEventListener('click', nextImage);
     
+    // creare const per start per inizializzare carosello automatico
+    const stopButton = document.createElement("button");
+    stopButton.classList.add("stop")
+    stopButton.innerHTML = "stop";
+    stopButton.addEventListener('click', stopImage);
+
+   
     // appendere i vari elementi
     boxContainer.append(img);
 
@@ -100,6 +113,11 @@ box.forEach((immagine, puntatoreIndice) => {
 
     boxContainer.append(prevButton);
 
+    boxContainer.append(stopButton);
+
+    boxContainer.append(startButton);
+
+
     // appendere tutto al container principale
     carouselContainer.append(boxContainer);
     }
@@ -108,6 +126,7 @@ box.forEach((immagine, puntatoreIndice) => {
 
 // Inizializza l'indice corrente a 0
 let currentIndex = 0;
+let intervalId;
 
 // aggiornare il carosello in base alla direzione
 function updateImg (direction) {
@@ -131,4 +150,19 @@ function updateImg (direction) {
         }
     });
 };
+
+
+
+function nextImage() {
+    interval = setInterval(() => {
+        updateImg("next");
+    }, 3000);
+}
+
+function stopImage() {
+    clearInterval(interval);
+}
+
+
+
 
