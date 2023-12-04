@@ -53,11 +53,13 @@ h3{
 
 .fa-arrow-right{
     top: 50%;
+    transform: translate(50% 2%);
     right: 2%;
 }
 
 .fa-arrow-left{
     top: 50%;
+    transform: translate(-50% -2%);
     left: 2%;
 }
 
