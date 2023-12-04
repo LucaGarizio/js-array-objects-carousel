@@ -91,14 +91,14 @@ box.forEach((immagine, puntatoreIndice) => {
 
     // creare const per start per inizializzare carosello automatico
     const startButton = document.createElement("button");
-    startButton.classList.add("start")
-    startButton.innerHTML = "start";
+    startButton.classList.add("start");
+    startButton.innerHTML = "Start";
     startButton.addEventListener('click', nextImage);
     
     // creare const per start per inizializzare carosello automatico
     const stopButton = document.createElement("button");
-    stopButton.classList.add("stop")
-    stopButton.innerHTML = "stop";
+    stopButton.classList.add("stop");
+    stopButton.innerHTML = "Stop";
     stopButton.addEventListener('click', stopImage);
 
    
@@ -126,7 +126,7 @@ box.forEach((immagine, puntatoreIndice) => {
 
 // Inizializza l'indice corrente a 0
 let currentIndex = 0;
-let intervalId;
+let interval;
 
 // aggiornare il carosello in base alla direzione
 function updateImg (direction) {
