@@ -36,15 +36,15 @@ img{
 h1{
     position: absolute;
     right: 10px;
-    bottom: 20%;
+    bottom: 10%;
 }
 
 h3{
     position: absolute;
     right: 10px;
-    bottom: 10%;
+    bottom: 5%;
     text-align: end;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .active{

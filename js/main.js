@@ -122,7 +122,7 @@ function updateImg (direction) {
 
     // cerca tutti gli elementi con la classe 'img-container'
     imgContainers.forEach((container, index) => {
-        // Rimuovi la classe 'active' da tutti gli elementi
+        // Rimuovere la classe 'active' da tutti gli elementi
         container.classList.remove("active");
         // Aggiungere la classe 'active' solo all'elemento corrente
         if (index === currentIndex) {
