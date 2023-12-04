@@ -16,7 +16,7 @@ main{
     align-items: center;
 }
 
-.carousel-container{
+#carousel-container{
     width: 70%;
     margin: 0 auto;
 }
@@ -33,33 +33,32 @@ img{
     object-fit:cover;
 }
 
-h2{
+h1{
     position: absolute;
     right: 10px;
-    bottom: 100px;
-    margin-bottom: 10px;
+    bottom: 20%;
 }
 
 h3{
     position: absolute;
-    right: 0;
-    bottom: 70px;
+    right: 10px;
+    bottom: 10%;
     text-align: end;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .active{
     display: block;
 }
 
-.fa-arrow-up{
-    top: 10px;
-    left: 50%;
+.fa-arrow-left{
+    top: 50%;
+    left: 40px;
 }
 
-.fa-arrow-down{
-    bottom: 10px;
-    left: 50%;
+.fa-arrow-right{
+    top: 50%;
+    right: 0;
 }
 
 .fa-solid{

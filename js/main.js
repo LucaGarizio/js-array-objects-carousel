@@ -20,7 +20,7 @@
 // BONUS 3: Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 
 
-const images = [ 
+const box = [ 
     { 
     image: 'img/01.webp', 
     title: 'Marvel\'s Spiderman Miles Morale', 
@@ -36,13 +36,62 @@ const images = [
     title: 'Fortnite',
     text: "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos."
     },
-    { image: 'img/04.webp',
+    { 
+    image: 'img/04.webp',
     title: 'Stray',
     text: 'Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city'
     },
-    { image: 'img/05.webp',
+    {
+    image: 'img/05.webp',
     title: "Marvel's Avengers",
     text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.'
     } 
 ];
-console.log(images);
+
+console.log(box);
+
+
+const carouselContainer = document.getElementById("carousel-container");
+
+box.forEach((immagine, puntatoreIndice) =>{
+    // creare costante per creare div contenitore
+    const boxContainer = document.createElement("div")
+    boxContainer.classList.add("img-container");
+    // se l'inidice è uguale a 0 aggiungi classe css
+    if (puntatoreIndice === 0) {
+        boxContainer.classList.add("active");
+    }
+
+    // creazione costanti per riempire dinamicamente il dom
+    const img = document.createElement("img");
+    img.src = immagine.image;
+
+    const title = document.createElement("h1");
+    title.innerHTML = immagine.title;
+
+    const text = document.createElement("h3");
+    text.innerHTML = immagine.text;
+
+    const nextButton = document.createElement ("div")
+    nextButton.id = ("next");
+    nextButton.innerHTML = '<i class="fa-solid fa-arrow-right"></i>';
+
+    const prevButton = document.createElement ("div")
+    prevButton.id = ("prev");
+    prevButton.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
+
+    // appendere i vari elementi
+    boxContainer.append(img);
+
+    boxContainer.append(title);
+
+    boxContainer.append(text);
+
+    boxContainer.append(nextButton);
+
+    boxContainer.append(prevButton);
+
+    // appendi tutto al container principale
+    carouselContainer.append(boxContainer);
+    }
+);
