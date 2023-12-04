@@ -59,7 +59,7 @@ box.forEach((immagine, puntatoreIndice) => {
     const boxContainer = document.createElement("div")
     boxContainer.classList.add("img-container");
 
-    // se l'indice è uguale a 0 aggiungi classe css
+    // // se l'indice è uguale a 0 aggiungi classe css
     if (puntatoreIndice === 0) {
         boxContainer.classList.add("active");
     }
